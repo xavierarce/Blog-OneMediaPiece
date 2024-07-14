@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <button id="loginBtn">Login</button>
+      <button id="registerBtn">Register</button>
+      <span id="userNickname" style="display: none"></span>
+      <button id="logoutBtn" style="display: none">Logout</button>
+    </div>
+
+    <!-- Sidebar for filtering articles -->
+    <div id="sidebar">
+      <button class="sidebar-button" data-category="public">Public</button>
+      <button class="sidebar-button" data-category="comedy">Comedy</button>
+      <button class="sidebar-button" data-category="cinema">Cinema</button>
+    </div>
+
+    <!-- Content of the home page -->
+    <div class="content">
+      <h1 class="title">Welcome to the article</h1>
+      <p class="sub-title"><span id="section">Public</span> section</p>
+
+      <button id="createArticleBtn">Create Article</button>
+      <div id="articleList"></div>
+      <!-- Container for displaying articles -->
+    </div>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <button id="loginBtn">Login</button>
+      <button id="registerBtn">Register</button>
+      <span id="userNickname" style="display: none"></span>
+      <button id="logoutBtn" style="display: none">Logout</button>
+    </div>
+
+    <!-- Sidebar for filtering articles -->
+    <div id="sidebar">
+      <button class="sidebar-button" onclick="window.location.href='/blog'">
+        Back to blog
+      </button>
+    </div>
+
+    <!-- Content of the home page -->
+    <div class="content">
+      <h1 class="title">Admin Panel</h1>
+
+      <table id="usersTable">
+        <thead>
+          <tr>
+            <th>Nickname</th>
+            <th>Login</th>
+            <th>Role</th>
+            <th>Banned</th>
+            <th>Deleted</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Users data will be injected here by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
