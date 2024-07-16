@@ -91,7 +91,7 @@ export function displayComments(button) {
     });
 
     commentsSection.innerHTML = `
-      <h2>Comments</h2>
+      <b>Comments</b>
       <div class="comments-container">
         ${commentsHTML}
       </div>
