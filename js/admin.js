@@ -87,7 +87,7 @@ async function updateUserStatus(user) {
       },
       body: JSON.stringify(user),
     });
-    const data = await response.text();
+    const data = await response.json();
     if (!data.success) {
       console.error("Error updating user status:", data.error);
     }
