@@ -12,10 +12,16 @@ export function setupFormHandlers() {
         body: JSON.stringify(jsonObject),
       });
       if (response.ok) {
+        const data = await response.json();
+        if (data?.deleted) {
+          return alert("Your account has been deleted.");
+        }
+        if (data?.banned) {
+          return alert("Your account has been banned.");
+        }
         document.getElementById("loginModal").style.display = "none";
         window.location.reload();
       } else {
-        const data = await response.json();
         alert(data.message);
       }
     } catch (error) {
@@ -24,7 +30,6 @@ export function setupFormHandlers() {
   };
 
   document.getElementById("registerForm").onsubmit = async function (event) {
-    alert("registerForm");
     event.preventDefault();
     var formData = new FormData(document.getElementById("registerForm"));
     var jsonObject = {};
@@ -34,7 +39,7 @@ export function setupFormHandlers() {
       const response = await fetch("php/register.php", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json", // Ensure JSON request
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(jsonObject),
       });
