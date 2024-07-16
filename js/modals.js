@@ -8,7 +8,7 @@ export function addModals() {
           <span class="close" id="closeLoginModal">&times;</span>
           <h2>Login</h2>
           <form id="loginForm">
-            <label for="loginUsername">Username:</label>
+            <label for="loginUsername">Login:</label>
             <input type="text" id="loginUsername" name="login" required /><br /><br />
             <label for="loginPassword">Password:</label>
             <input type="password" id="loginPassword" name="password" required /><br /><br />
