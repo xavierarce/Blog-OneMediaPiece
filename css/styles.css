@@ -43,7 +43,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  padding-top: 60px; /* Adjust as needed */
+  padding-top: 60px;
 }
 
 .modal-content {
@@ -51,8 +51,8 @@ body {
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Adjust as needed */
-  max-width: 500px; /* Example max-width */
+  width: 80%;
+  max-width: 500px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -222,7 +222,7 @@ body {
 }
 
 .article-item {
-  background-color: #f2f2f2; /* Light gray background */
+  background-color: #fff;
   border-radius: 5px;
   margin: 20px 0;
   padding: 20px;
@@ -241,13 +241,15 @@ body {
   margin: 5px 0 10px;
 }
 
-.article-content {
+.article-content,
+.commentary-content {
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
 }
 
-.article-date {
+.article-date,
+.commentary-date {
   font-size: 0.9rem;
   color: #777;
   margin: 15px 0 0;
@@ -391,4 +393,5 @@ hr {
   margin: 10px 0;
   padding: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14;
 }
