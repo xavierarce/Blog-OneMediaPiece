@@ -78,19 +78,20 @@ export async function fetchUsers() {
   }
 }
 
-function updateUserStatus(user) {
-  fetch("php/admin/update_user.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(user),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (!data.success) {
-        console.error("Error updating user status:", data.error);
-      }
-    })
-    .catch((error) => console.error("Error updating user status:", error));
+async function updateUserStatus(user) {
+  try {
+    const response = await fetch("php/admin/update_user.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    const data = await response.text();
+    if (!data.success) {
+      console.error("Error updating user status:", data.error);
+    }
+  } catch (error) {
+    console.error("Error updating user status:", error);
+  }
 }
