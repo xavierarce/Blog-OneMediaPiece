@@ -46,19 +46,22 @@ try {
 
   echo json_encode($response);
 
-  function handleInvalidLogin()
-  {
-    destroySession();
-    $response = [
-      'success' => false,
-      'message' => 'Invalid credentials',
-    ];
-    http_response_code(401);
-    echo json_encode($response);
-    exit;
-  }
+  echo json_encode($response);
+  exit;
 } catch (PDOException $e) {
   destroySession();
   http_response_code(500);
   echo json_encode(['success' => false, 'message' => 'Database error: ' . $e->getMessage()]);
+  exit;
+}
+
+function handleInvalidLogin($message = 'Invalid credentials')
+{
+  destroySession();
+  http_response_code(401);
+  echo json_encode([
+    'success' => false,
+    'message' => $message,
+  ]);
+  exit;
 }
