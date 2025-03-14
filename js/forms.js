@@ -22,6 +22,7 @@ export function setupFormHandlers() {
         document.getElementById("loginModal").style.display = "none";
         window.location.reload();
       } else {
+        const data = await response.json();
         alert(data.message);
       }
     } catch (error) {
